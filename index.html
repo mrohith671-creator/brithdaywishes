@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 🎉</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page 1: Landing Page -->
+    <div id="page1" class="page active">
+        <div class="landing-container">
+            <div class="balloon balloon-1">🎈</div>
+            <div class="balloon balloon-2">🎈</div>
+            <div class="balloon balloon-3">🎈</div>
+            <div class="balloon balloon-4">🎈</div>
+            
+            <h1 class="title">🎉 Happy Birthday! 🎉</h1>
+            <p class="subtitle">You're turning 24 today!</p>
+            <p class="message">Get ready for something special...</p>
+            
+            <button class="btn btn-primary" onclick="goToPage(2)">Let's Begin ✨</button>
+        </div>
+    </div>
+
+    <!-- Page 2: Password Page -->
+    <div id="page2" class="page">
+        <div class="password-container">
+            <h2>Welcome Back!</h2>
+            <p class="subtitle">Enter your date of birth to continue</p>
+            <p class="hint">(Format: DD-MM-YYYY)</p>
+            
+            <input 
+                type="text" 
+                id="passwordInput" 
+                class="password-input" 
+                placeholder="DD-MM-YYYY"
+                onkeypress="handlePasswordKeypress(event)"
+            >
+            
+            <button class="btn btn-primary" onclick="verifyPassword()">Unlock 🔓</button>
+            <button class="btn btn-secondary" onclick="goToPage(1)">Go Back</button>
+            
+            <p class="error-msg" id="errorMsg"></p>
+        </div>
+    </div>
+
+    <!-- Page 3: Party Intro Page -->
+    <div id="page3" class="page">
+        <canvas id="confetti"></canvas>
+        <div class="party-container">
+            <div class="splash splash-1">🎊</div>
+            <div class="splash splash-2">🎊</div>
+            <div class="splash splash-3">🎊</div>
+            <div class="splash splash-4">🎊</div>
+            
+            <h1 class="party-title">🎂 Party Time! 🎂</h1>
+            <h2 class="wishing-text">Wishing You a Happy 24th Birthday!</h2>
+            <p class="party-message">🎉 Another year of amazing memories! 🎉</p>
+            
+            <button class="btn btn-primary" onclick="goToPage(4)">Continue 🚀</button>
+        </div>
+    </div>
+
+    <!-- Page 4: Surprise Page -->
+    <div id="page4" class="page">
+        <div class="surprise-container">
+            <h2>I have a Surprise for You!</h2>
+            <p class="surprise-message">Are you ready to see it? 🎁</p>
+            
+            <div class="button-group">
+                <button class="btn btn-yes" onclick="goToPage(5)">Yes! 😊</button>
+                <button class="btn btn-no" onclick="showSadMessage()">No 😢</button>
+            </div>
+            
+            <div class="sad-container" id="sadContainer" style="display: none;">
+                <div class="sad-emoji">😢</div>
+                <p class="sad-message">Please open and see the letter...</p>
+                <button class="btn btn-primary" onclick="goToPage(5)">Okay, Show Me ❤️</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 5: Letter Page -->
+    <div id="page5" class="page">
+        <div class="letter-container">
+            <div class="letter">
+                <h2>A Letter For You 💌</h2>
+                <div class="letter-content">
+                    <p>Dear Birthday Star,</p>
+                    
+                    <p>Happy 24th birthday! 🎉</p>
+                    
+                    <p>Today is your special day, and I wanted to take a moment to tell you how much you mean to me. Another year has passed, and with it came so many beautiful moments and memories that we've shared together.</p>
+                    
+                    <p>You've shown incredible strength, kindness, and resilience this past year. Your smile brightens everyone's day, and your heart is one of the purest I know. I'm grateful for every laugh we've shared, every conversation we've had, and every moment spent with you.</p>
+                    
+                    <p>As you turn 24, I want you to know that I believe in you and all the amazing things you are going to achieve. The world is lucky to have you in it. Keep being the wonderful person you are, never lose that spark, and always remember that you deserve all the happiness in the world.</p>
+                    
+                    <p>Here's to a year filled with:</p>
+                    <ul class="wishes-list">
+                        <li>🌟 New adventures and unforgettable memories</li>
+                        <li>💪 Growth and overcoming challenges</li>
+                        <li>😊 Endless laughter and joy</li>
+                        <li>🎯 Achieving all your dreams</li>
+                        <li>❤️ Surrounding yourself with love and good people</li>
+                    </ul>
+                    
+                    <p>Have the most wonderful birthday ever, and enjoy every second of it!</p>
+                    
+                    <p class="signature">With all my love and best wishes,<br><strong>Your Friend 🎂</strong></p>
+                </div>
+                
+                <button class="btn btn-primary" onclick="location.reload()">Start Over 🔄</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
